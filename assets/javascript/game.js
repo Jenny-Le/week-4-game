@@ -2,6 +2,7 @@ $(document).ready(function() {
 	// make var so set the intial value
 	var wins = 0;
 	var losses = 0;
+	//Generates the number you need to win
 	var targetNumber = Math.floor(Math.random() * ((120-19)+1) + 19);
 	var totalNumber = 0;
 	var gemOne = Math.floor(Math.random() * ((12-1)+1) + 1);
@@ -13,14 +14,18 @@ $(document).ready(function() {
 	// it is applied to that var, rather than typing everything out
 	var winningScore = function(){
 		if (totalNumber === targetNumber){
+			//Adds a score to your total win numbner
 			wins++
+			//Displays the word win and win number from HTML and VAR
 			$('.Wins').text(wins);
 			console.log(wins);
 			reset();
 		} else if (totalNumber > targetNumber){
+			//Adds a score to the amount of numbers you've lost
 			losses++
 			$('.Losses').text(losses);
 			console.log(losses);
+			//Calls reset function
 			reset();
 		}		
   	};
